@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif; }
+
+.fadeIn {
+  animation: 1s fadeIn ease-out;
+  animation-fill-mode: both; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+.expand {
+  animation: 1s expand ease-out;
+  animation-fill-mode: both; }
+
+@keyframes expand {
+  from {
+    width: 100%;
+    transform: scaleX(0); }
+  to {
+    width: 100%;
+    transform: scaleX(1); } }
+.hide {
+  display: none; }
+
+.nav {
+  font-size: 2em;
+  position: absolute;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #fafafa;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  z-index: 1;
+  color: #fafafa;
+  transition: 0.5s;
+  background-color: rgba(50, 50, 50, 0.5);
+  transform: translateY(-175px); }
+  .nav li {
+    text-align: center; }
+    .nav li a:hover {
+      color: #646464; }
+
+.open_nav {
+  transform: translateY(0px); }
+
+.nav_menu {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 15px;
+  z-index: 5; }
+  .nav_menu .bar1,
+  .nav_menu .bar2,
+  .nav_menu .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: #fafafa;
+    margin: 8px 0;
+    transition: 0.4s; }
+
+/* Rotate first bar */
+.nav_menu_change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px); }
+
+/* Fade out the second bar */
+.nav_menu_change .bar2 {
+  opacity: 0; }
+
+/* Rotate last bar */
+.nav_menu_change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px); }
+
+.button, .button--youtube {
+  border: 2px solid #fafafa;
+  color: #fafafa;
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+  width: fit-content;
+  margin: 0 auto 0 auto; }
+  .button:hover, .button--youtube:hover {
+    color: #323232;
+    background: #fafafa; }
+
+.button--youtube {
+  border: 2px solid red;
+  background-color: red;
+  color: #fafafa; }
+  .button--youtube:hover {
+    color: red;
+    background: #fafafa; }
+
+a {
+  text-decoration: none;
+  color: #fafafa;
+  transition: 0.5s; }
+  a a:visited {
+    color: #fafafa; }
+
+.full_background, .full_background--center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10; }
+
+.full_background--center {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#first .full_background--center {
+  background-image: url("http://i.imgur.com/xfk1vYW.png"); }
+
+#second .full_background--center {
+  background-image: url("https://img1.goodfon.com/original/1920x1080/3/ca/art-igra-hearthstone-heroes.jpg"); }
+
+#third .full_background--center {
+  background-image: url("http://wow.zamimg.com/uploads/screenshots/normal/524249-jason-wang-ragnaros.jpg"); }
+
+#about .full_background--center {
+  background-image: url("http://i.imgur.com/xfk1vYW.png"); }
+
+#contact .full_background--center {
+  background-image: url("https://i.pinimg.com/originals/70/44/c7/7044c78736e18a9d974e0e2d2b318e69.jpg"); }
+
+@media (min-width: 600px) {
+  .showcase__info .showcase__title {
+    font-size: 3em; }
+
+  #about {
+    padding: 75px 20% 75px 20%; }
+
+  .contact__header {
+    font-size: 2.5em; }
+
+  .contact__info {
+    font-size: 2em; } }
+@media (min-width: 1024px) {
+  .nav {
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 0px;
+    background: none;
+    border: none;
+    transform: translateY(0px); }
+    .nav li {
+      width: 15%; }
+
+  .nav_menu {
+    display: none; } }
+#main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #main h1 {
+    text-align: center;
+    font-size: 4em;
+    color: #fafafa;
+    margin: 5px 0 5px 0; }
+
+.video_container {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.showcase {
+  height: 500px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fafafa; }
+
+.showcase__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px; }
+  .showcase__info .container {
+    max-width: 80%;
+    padding: 30px;
+    position: relative; }
+  .showcase__info .button, .showcase__info .button--youtube {
+    opacity: 0; }
+  .showcase__info .container__background {
+    background-color: rgba(50, 50, 50, 0.8);
+    width: 0;
+    min-width: auto; }
+  .showcase__info hr {
+    width: 0%; }
+  .showcase__info .showcase__title {
+    font-size: 3em;
+    margin: 0;
+    opacity: 0; }
+  .showcase__info .showcase__description {
+    opacity: 0; }
+
+#third .container {
+  width: 100%; }
+
+.watch__more {
+  padding: 15px;
+  background: #fafafa;
+  text-align: center;
+  font-size: 2em; }
+  .watch__more p {
+    margin: 10px; }
+  .watch__more hr {
+    margin: 15px auto 15px auto;
+    width: 60%; }
+
+#about {
+  padding: 75px 10% 75px 10%;
+  position: relative; }
+
+.about__header {
+  font-size: 3em;
+  margin-bottom: 10px; }
+
+.about__container {
+  padding: 15px 50px 15px 50px;
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #fafafa; }
+
+#contact {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center; }
+
+.contact__container {
+  background: rgba(50, 50, 50, 0.8);
+  color: #fafafa;
+  padding: 15px 50px 15px 50px; }
+
+.contact__header {
+  font-size: 1.5em; }
+
+.contact__info {
+  list-style: none;
+  font-size: 1em;
+  padding: 0;
+  text-align: center; }
+
+/*# sourceMappingURL=index.css.map */

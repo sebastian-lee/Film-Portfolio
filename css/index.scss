@@ -1,0 +1,144 @@
+//modules and variables
+@import "./partials/_base";
+
+//partials
+@import "./partials/_animations";
+@import "./partials/_nav";
+@import "./partials/_buttons";
+@import "./partials/_links";
+@import "./partials/_background";
+@import "./partials/_mediaQueries";
+
+#main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+    font-size: 4em;
+    color: $main-color;
+    margin: 5px 0 5px 0;
+  }
+}
+
+.video_container{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.showcase {
+  height: 500px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: $main-color;
+}
+
+.showcase__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+
+  .container {
+    max-width: 80%;
+    padding: 30px;
+    position: relative;
+  }
+
+  .button {
+    opacity: 0;
+  }
+
+  .container__background {
+    background-color: rgba($secondary-color, 0.8);
+    width: 0;
+    min-width: auto;
+  }
+
+  hr {
+    width: 0%;
+  }
+
+  .showcase__title {
+    font-size: 3em;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .showcase__description {
+    opacity: 0;
+  }
+}
+
+#third {
+  .container {
+    width: 100%;
+  }
+}
+
+.watch__more {
+  padding: 15px;
+  background: $main-color;
+  text-align: center;
+  font-size: 2em;
+
+  p {
+    margin: 10px;
+  }
+
+  hr {
+    margin: 15px auto 15px auto;
+    width: 60%;
+  }
+}
+
+#about {
+  padding: 75px 10% 75px 10%;
+  position: relative;
+}
+
+.about__header {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.about__container {
+  padding: 15px 50px 15px 50px;
+  background-color: rgba($secondary-color, 0.9);
+  color: $main-color;
+}
+
+#contact {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__container {
+  background: rgba($secondary-color, 0.8);
+  color: $main-color;
+  padding: 15px 50px 15px 50px;
+}
+
+.contact__header {
+  font-size: 1.5em;
+}
+
+.contact__info {
+  list-style: none;
+  font-size: 1em;
+  padding: 0;
+  text-align: center;
+}

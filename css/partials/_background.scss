@@ -1,0 +1,33 @@
+.full_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10;
+}
+
+.full_background--center {
+  @extend .full_background;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#first .full_background--center {
+  background-image: url("http://i.imgur.com/xfk1vYW.png");
+}
+#second .full_background--center {
+  background-image: url("https://img1.goodfon.com/original/1920x1080/3/ca/art-igra-hearthstone-heroes.jpg");
+}
+#third .full_background--center {
+  background-image: url("http://wow.zamimg.com/uploads/screenshots/normal/524249-jason-wang-ragnaros.jpg");
+}
+
+#about .full_background--center {
+  background-image: url("http://i.imgur.com/xfk1vYW.png");
+}
+
+#contact .full_background--center {
+  background-image: url("https://i.pinimg.com/originals/70/44/c7/7044c78736e18a9d974e0e2d2b318e69.jpg");
+}

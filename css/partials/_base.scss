@@ -1,0 +1,24 @@
+//load all modules
+@import "../modules/_colors.scss";
+@import "../modules/_mediaQuerySizes.scss";
+
+// Theme
+$main-color: $white;
+$secondary-color: $black;
+
+// Base Font
+$base-font-family: "Raleway", sans-serif;
+
+// Secondary Font
+$secondary-font-family: "Open Sans", sans-serif;
+
+// Fixed Font
+$fixed-font-family: monospace;
+
+// Headings
+
+//defaults for all elements
+* {
+  box-sizing: border-box;
+  font-family: $base-font-family;
+}

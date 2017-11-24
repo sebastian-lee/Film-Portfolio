@@ -1,0 +1,10 @@
+
+a {
+    text-decoration: none;
+    color: $main-color;
+    transition: 0.5s;
+  
+    a:visited {
+      color: $main-color;
+    }
+  }

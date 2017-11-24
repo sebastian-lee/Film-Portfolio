@@ -1,0 +1,26 @@
+.button {
+  border: 2px solid $main-color;
+  color: $main-color;
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+  width: fit-content;
+  margin: 0 auto 0 auto;
+
+  &:hover {
+    color: $secondary-color;
+    background: $main-color;
+  }
+}
+
+.button--youtube {
+  @extend .button;
+  border: 2px solid red;
+  background-color: red;
+  color: $white;
+
+  &:hover {
+    color: red;
+    background: $white;
+  }
+}

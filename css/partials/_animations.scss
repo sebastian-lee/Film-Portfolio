@@ -1,0 +1,39 @@
+@import "../modules/_colors";
+
+.fadeIn {
+  animation: 1s fadeIn ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity:1;
+    transform: translateY(0px);
+  }
+}
+
+.expand {
+  animation: 1s expand ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes expand {
+  from {
+    width: 100%;
+    transform: scaleX(0);
+  }
+
+  to {
+    width: 100%;
+    transform: scaleX(1);
+  }
+}
+
+.hide {
+  display: none;
+}
