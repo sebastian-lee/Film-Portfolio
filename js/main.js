@@ -1,4 +1,23 @@
 $(document).ready(function() {
+  //Video section
+  var bgVideo = $("#bgVid");
+  var videoButton = $("#videoButton");
+
+  //Check if in mobile
+  if (videoButton.css("display") != "none") {
+    bgVideo.get(0).pause();
+  }
+
+  videoButton.click(function() {
+    if (bgVideo.get(0).paused) {
+      videoButton.text("PAUSE");
+      bgVideo.get(0).play();
+    } else {
+      videoButton.text("PLAY");
+      bgVideo.get(0).pause();
+    }
+  });
+
   //Jquery Smooth Scrolling
   // Select all links with hashes
   $('a[href*="#"]')

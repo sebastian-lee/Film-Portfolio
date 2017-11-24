@@ -16,6 +16,10 @@
   .contact__info {
     font-size: 2em;
   }
+
+  .button--video{
+    display:none;
+  }
 }
 
 @media (min-width: $desktop-up) {
