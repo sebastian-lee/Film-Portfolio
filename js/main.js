@@ -1,13 +1,66 @@
 $(document).ready(function() {
-  //Video section
+
+/* ==========================================================================
+   Jquery Smooth Scrolling
+   ========================================================================== */
+
+  // Select all links with hashes
+  $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length
+        ? target
+        : $("[name=" + this.hash.slice(1) + "]");
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $("html, body").animate(
+          {
+            scrollTop: target.offset().top
+          },
+          1000,
+          function() {
+            // Callback after animation
+            // Must change focus!
+            var $target = $(target);
+            $target.focus();
+            if ($target.is(":focus")) {
+              // Checking if the target was focused
+              return false;
+            } else {
+              $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
+              $target.focus(); // Set focus again
+            }
+          }
+        );
+      }
+    }
+  });
+
+/* ==========================================================================
+   Video background section
+   ========================================================================== */
+
   var bgVideo = $("#bgVid");
   var videoButton = $("#videoButton");
 
-  //Check if in mobile
+  //Check if in mobile, if it is start the video paused
   if (videoButton.css("display") != "none") {
     bgVideo.get(0).pause();
   }
 
+  //Toggle for play pause button
   videoButton.click(function() {
     if (bgVideo.get(0).paused) {
       videoButton.text("PAUSE");
@@ -18,55 +71,19 @@ $(document).ready(function() {
     }
   });
 
-  //Jquery Smooth Scrolling
-  // Select all links with hashes
-  $('a[href*="#"]')
-    // Remove links that don't actually link to anything
-    .not('[href="#"]')
-    .not('[href="#0"]')
-    .click(function(event) {
-      // On-page links
-      if (
-        location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
-        location.hostname == this.hostname
-      ) {
-        // Figure out element to scroll to
-        var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
-        // Does a scroll target exist?
-        if (target.length) {
-          // Only prevent default if animation is actually gonna happen
-          event.preventDefault();
-          $("html, body").animate(
-            {
-              scrollTop: target.offset().top
-            },
-            1000,
-            function() {
-              // Callback after animation
-              // Must change focus!
-              var $target = $(target);
-              $target.focus();
-              if ($target.is(":focus")) {
-                // Checking if the target was focused
-                return false;
-              } else {
-                $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
-                $target.focus(); // Set focus again
-              }
-            }
-          );
-        }
-      }
-    });
-
+/* ==========================================================================
+  Nav menu button
+  ========================================================================== */
+  // Nav menu toggle for mobile view 
   $(".nav_menu").click(function() {
     $(".nav").toggleClass("open_nav");
     $(this).toggleClass("nav_menu_change");
   });
+
+
+/* ==========================================================================
+   Work Section
+   ========================================================================== */
 
   //link for each showcase item
   var gifLinks = {

@@ -17,9 +17,19 @@
 
   //Hide nav in mobile
   transform: translateY(-175px);
+  opacity: 0;
 
   li {
-    text-align: center;
+    text-align: left;
+    width:150px;
+    transition: 0.5s;
+    border-left: 3px solid rgba($main-color,0);
+    padding-left:5px;
+
+    &:hover{
+      border-left: 3px solid $main-color;
+      padding-left: 25px;
+    }
 
     a:hover {
       color: $grey;
@@ -29,6 +39,7 @@
 
 .open_nav {
   transform: translateY(0px);
+  opacity: 100;
 }
 
 .nav_menu {
@@ -38,23 +49,59 @@
   top: 10px;
   right: 15px;
   z-index: 5;
+  border: 1px solid $main-color;
 
-  .bar1,
-  .bar2,
-  .bar3 {
-    width: 35px;
-    height: 3px;
+  height: 65px;
+  width: 65px;
+  border-radius: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+  &:hover{
     background-color: $main-color;
-    margin: 8px 0;
-    transition: 0.4s;
+    .bars{
+      .bar1,
+      .bar2,
+      .bar3 {
+        background-color: $secondary-color;
+        margin: 12px 0;
+      }
+    }
+  }
+
+  .bars{
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 1px;
+      background-color: $main-color;
+      margin: 8px 0;
+      transition: 0.4s;
+    }
+  }
+}
+
+.nav_menu_change {
+  &:hover{
+    .bars{
+      .bar1,
+      .bar2,
+      .bar3 {
+        background-color: $secondary-color;
+        margin: 8px 0;
+      }
+    }
   }
 }
 
 //Animation for Nav
 /* Rotate first bar */
 .nav_menu_change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 
 /* Fade out the second bar */
@@ -64,6 +111,6 @@
 
 /* Rotate last bar */
 .nav_menu_change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
 }

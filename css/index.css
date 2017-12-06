@@ -43,14 +43,23 @@
   color: #fafafa;
   transition: 0.5s;
   background-color: rgba(50, 50, 50, 0.5);
-  transform: translateY(-175px); }
+  transform: translateY(-175px);
+  opacity: 0; }
   .nav li {
-    text-align: center; }
+    text-align: left;
+    width: 150px;
+    transition: 0.5s;
+    border-left: 3px solid rgba(250, 250, 250, 0);
+    padding-left: 5px; }
+    .nav li:hover {
+      border-left: 3px solid #fafafa;
+      padding-left: 25px; }
     .nav li a:hover {
       color: #646464; }
 
 .open_nav {
-  transform: translateY(0px); }
+  transform: translateY(0px);
+  opacity: 100; }
 
 .nav_menu {
   display: inline-block;
@@ -58,20 +67,41 @@
   cursor: pointer;
   top: 10px;
   right: 15px;
-  z-index: 5; }
-  .nav_menu .bar1,
-  .nav_menu .bar2,
-  .nav_menu .bar3 {
+  z-index: 5;
+  border: 1px solid #fafafa;
+  height: 65px;
+  width: 65px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s; }
+  .nav_menu:hover {
+    background-color: #fafafa; }
+    .nav_menu:hover .bars .bar1,
+    .nav_menu:hover .bars .bar2,
+    .nav_menu:hover .bars .bar3 {
+      background-color: #323232;
+      margin: 12px 0; }
+  .nav_menu .bars .bar1,
+  .nav_menu .bars .bar2,
+  .nav_menu .bars .bar3 {
     width: 35px;
-    height: 3px;
+    height: 1px;
     background-color: #fafafa;
     margin: 8px 0;
     transition: 0.4s; }
 
+.nav_menu_change:hover .bars .bar1,
+.nav_menu_change:hover .bars .bar2,
+.nav_menu_change:hover .bars .bar3 {
+  background-color: #323232;
+  margin: 8px 0; }
+
 /* Rotate first bar */
 .nav_menu_change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px); }
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) translate(-5px, 6px); }
 
 /* Fade out the second bar */
 .nav_menu_change .bar2 {
@@ -79,8 +109,8 @@
 
 /* Rotate last bar */
 .nav_menu_change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px); }
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px); }
 
 .button, .button--youtube, .button--video {
   border: 2px solid #fafafa;
@@ -165,7 +195,8 @@ a {
     padding: 0px;
     background: none;
     border: none;
-    transform: translateY(0px); }
+    transform: translateY(0px);
+    opacity: 100; }
     .nav li {
       width: 15%; }
 
